@@ -1,9 +1,3 @@
-/**
- * ... 4598026 more items ]
-Solution 1: 21367368
-Solution 2: 1766400
- */
-
 let fs = require('fs');
 let input = fs.readFileSync('./input.txt', 'utf-8');
 let ingredients = input.replace(/\r|Butterscotch|Cinnamon|Sprinkles|Chocolate|Candy|:|, | capacity |durability|flavor|texture|calories/g, '').split('\n').map(r => r.split(' '));
