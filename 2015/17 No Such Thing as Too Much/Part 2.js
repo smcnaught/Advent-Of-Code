@@ -35,7 +35,6 @@ combinations.forEach(c => {
 
 console.log(`Part One Answer: ${partOneAnswer.length}`);
 
-
 ///////////////////////////////////// Part Two /////////////////////////////////////
 
 let minContainers = 0;
