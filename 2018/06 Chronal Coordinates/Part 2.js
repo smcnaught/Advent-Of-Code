@@ -1,5 +1,5 @@
 let fs = require("fs");
-let text = fs.readFileSync("./puzzleInput.txt", "utf-8");
+let text = fs.readFileSync("./input.txt", "utf-8");
 let input = text.split('\n').map(str => (str.match(/-?[0-9]+/g) || []).map(Number))
 let inRegion = 0;
 
