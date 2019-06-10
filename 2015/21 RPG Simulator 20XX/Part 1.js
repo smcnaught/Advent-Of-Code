@@ -75,4 +75,4 @@ for (let p = 0; p < allPlayers.length; p++)
   playGame(allPlayers[p], p);
 }
 
-console.log(`Part One Answer: ${goldSpent.sort((a, b) => a -b)[0]}`);
+console.log(`Part One Answer: ${goldSpent.sort((a, b) => a - b)[0]}`);
