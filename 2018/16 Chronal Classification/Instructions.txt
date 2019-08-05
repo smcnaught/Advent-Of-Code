@@ -52,17 +52,19 @@ Equality testing:
 
 Unfortunately, while the manual gives the name of each opcode, it doesn't seem to indicate the number. 
 However, you can monitor the CPU to see the contents of the registers before and after instructions are executed to try to work them out. 
-Each opcode has a number from 0 through 15, but the manual doesn't say which is which. For example, suppose you capture the following sample:
+Each opcode has a number from 0 through 15, but the manual doesn't say which is which. 
+For example, suppose you capture the following sample:
 
-Before: [3, 2, 1, 1]
-9 2 1 2
-After:  [3, 2, 2, 1]
+  Before: [3, 2, 1, 1]
+  9 2 1 2
+  After:  [3, 2, 2, 1]
 
 This sample shows the effect of the instruction 9 2 1 2 on the registers. 
 Before the instruction is executed, register 0 has value 3, register 1 has value 2, and registers 2 and 3 have value 1. 
 After the instruction is executed, register 2's value becomes 2.
 
-The instruction itself, 9 2 1 2, means that opcode 9 was executed with A=2, B=1, and C=2. Opcode 9 could be any of the 16 opcodes listed above, 
+The instruction itself, 9 2 1 2, means that opcode 9 was executed with A=2, B=1, and C=2. 
+Opcode 9 could be any of the 16 opcodes listed above, 
 but only three of them behave in a way that would cause the result shown in the sample:
 
 - Opcode 9 could be mulr: register 2 (which has a value of 1) times register 1 (which has a value of 2) produces 2, 
