@@ -2,16 +2,20 @@ let fs = require("fs");
 let text = fs.readFileSync("./input.txt", "utf-8");
 let data = text.replace(/\r|Before: \[|,|]|After:  \[/g, "").replace(/^\s*\n/gm, "").split("\n");
 let operations = ["addr", "addi", "mulr", "muli", "banr", "bani", "borr", "bori", "setr", "seti", "gtir", "gtri", "gtrr", "eqir", "eqri", "eqrr"];
-let opCodes = [], samples = [], temp = [];
-let c = 0;
-for (let i = 0; i < data.length; i++) {
-  temp.push(data[i].split(" ").map(Number));
-  c++;
+let opCodes = [], samples = [];
 
-  if (c === 3) {
-    samples.push(temp);
-    temp = [];
-    c = 0;
+let setData = () => {
+  let temp = [];
+  let c = 0;
+  for (let i = 0; i < data.length; i++) {
+    temp.push(data[i].split(" ").map(Number));
+    c++;
+
+    if (c === 3) {
+      samples.push(temp);
+      temp = [];
+      c = 0;
+    }
   }
 }
 
@@ -46,7 +50,8 @@ let calculate = (operation, init, a, b, c) => {
   return initialState;
 }
 
-function partOne() {
+let partOne = () => {
+  setData();
   let behaveLike3OrMore = 0;
 
   for (let i = 0; i < samples.length; i++) {
