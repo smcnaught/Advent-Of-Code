@@ -1,4 +1,7 @@
 /**
+ * The chart below creates a scatter graph. The docs for chartjs have different chart/graph types you can easily plug in by replacing the "new Chart" code on line 54
+ *                https://www.chartjs.org/docs/latest/
+ * 
  * Instructions:
  * 
  *      1. Are your coordinates formatted as a string (like the strCoords variable below)? 
@@ -46,6 +49,8 @@ function getArrayOfCoordObjs(strCoords) {
 }
 
 let ctx = document.getElementById('myChart');
+
+// Replace below for a different type of chart
 new Chart(ctx, {
   type: 'scatter',
   data: {
