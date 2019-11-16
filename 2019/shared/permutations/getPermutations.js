@@ -37,7 +37,7 @@ function getPermutations(items) {
  */
 function doubleCheckNumberOfPossibiltiesIsCorrect() {
   let numberOfPossiblePermutations = getPermutations(items).length;
-  let mathDeterminedPossibilities = checkWithMath();
+  let mathDeterminedPossibilities = checkTheMath();
   
   if (numberOfPossiblePermutations === mathDeterminedPossibilities)
   {
@@ -49,16 +49,26 @@ function doubleCheckNumberOfPossibiltiesIsCorrect() {
     console.log('\x1b[31m\x1b[7m', `ERROR: The math equation did not calculate the same number of possibilities as the 'getPermutations' method. 
       
       getPermutations() calculated: ${numberOfPossiblePermutations} possibilities.
-      checkWithMath() calculated: ${mathDeterminedPossibilities} possibilities.`)
+      checkTheMath() calculated: ${mathDeterminedPossibilities} possibilities.`)
   }
   
-  function checkWithMath() {
+  function checkTheMath() {
     let possibilities = 1;
-    items.slice().reverse().forEach((item, index) => { 
-      if (index !== 0) {
-        possibilities = possibilities * (index + 1)
+
+    function recursivelyGetPossibilities (count) {
+      if (count > 0)
+      {
+        possibilities *= count;
+        return recursivelyGetPossibilities(count - 1);
       }
-    })
+      else
+      {
+        return count;
+      }
+    }
+
+    recursivelyGetPossibilities(items.length);
+    
     return possibilities;
   }
 }
