@@ -26,7 +26,7 @@ function countdown(value) {
 
 
 // Example three
-let list = [...Array(10000).keys()]; // fill array with 0 through 10,000
+let list = [...Array(10000).keys()]; // fill array with 0 through 9999
 let start = new Date;
 
 function nextListItem() {
@@ -49,3 +49,6 @@ function nextListItem() {
   }
 }
 // nextListItem();
+
+
+console.log(list[list.length - 1]);
