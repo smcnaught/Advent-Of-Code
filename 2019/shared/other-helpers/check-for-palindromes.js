@@ -7,6 +7,7 @@ let word = 'Doc, Note: I Dissent. A Fast Never Prevents A Fatness. I Diet On Cod
 // let word = 'not a paly';
 
 
+// regex is stripping all non-alphanumeric chars from string
 let reverseWord = word.replace(/\W/g, '').split('').reverse().join('').toLowerCase();
 wordNoSpaces = word.replace(/\W/g, '').toLowerCase();
 
