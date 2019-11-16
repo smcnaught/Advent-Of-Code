@@ -1,6 +1,6 @@
 /**
  * Used to store an x,y coordinate as one numeric value
- * **It's much faster to loop through an array of numbers than an array objects with x and y properties**
+ * **It's much faster to loop through an array of numbers than an array of objects with x and y properties**
  */
 
 function createComplexCoordinate() {
