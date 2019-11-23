@@ -3,9 +3,9 @@
  * https://hackernoon.com/how-to-implement-dijkstras-algorithm-in-javascript-abdfd1702d04
  * 
  * *** Description ***
- * Dijkstras algorithm is used for finding the shortest paths between nodes in a weighted (there is a cost to get from point to point) graph.
+ * Dijkstras algorithm is used for finding the shortest paths between nodes in a ***weighted*** (there is a cost to get from point to point) graph.
  * 
- * Main Steps in Dijkstra's Algorithm
+ * *** Main Steps in Dijkstra's Algorithm ***
  *  1. Find the "cheapest" node
  *  2. Update the cost of the immediate neighbors in this node.
  *  3. Repeat steps 1 and 2 until you've done this for every node
