@@ -4,7 +4,8 @@ let linkedList = require('../linked-list/linked-list');
  * *** Breadth First Search Using A Linked List ***
  * 
  * *** Documentation: ***
- * http://gregtrowbridge.com/a-basic-pathfinding-algorithm/
+ * http://gregtrowbridge.com/a-basic-pathfinding-algorithm/  *** Implementation ***
+ * https://hackernoon.com/breadth-first-search-in-javascript-e655cd824fa4  *** Explanation with pics ***
  * 
  * *** Description: ***
  * Checks every possible path of length 1 and then of length 2 and so on
@@ -12,6 +13,17 @@ let linkedList = require('../linked-list/linked-list');
  * 
  * Imagine a graph where some coordinates are blocked and you need to find the
  * shortest path from one coordinate to another; this algorithm will find it.
+ * 
+ * *** Differences between Breadth First and Depth First ***
+ *  -BFS algorithm starts shallow and digs deeper row by row.
+ *  -DFS on the other hand quickly dives deep into the structure you are searching,
+ *   quickly reaching the bottom and then working its way back up to the top.
+ *
+ *  -If a solution is not far from the root of the tree it would be obvious to use BFS
+ *   since it quickly searches the top of the data structure first.
+ *   However, if your solution could be deep inside the data structure, a DFS algorithm
+ *   would dive quickly down in search of it. Also, in the case of wide trees a DFS search
+ *   is more effective while a narrow tree is easily traversed by a BFS search.
  */
 
 /**
@@ -32,6 +44,7 @@ function findShortestPath(startCoordinates, grid) {
   }
 
   // Initialize the queue with the start location already inside
+  // The queue keeps track of the nodes that need to be searched next
   const queue = new linkedList.LinkedList();
   queue.push(location);
 
