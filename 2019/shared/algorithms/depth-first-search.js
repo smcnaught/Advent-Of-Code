@@ -2,14 +2,14 @@
  * *** Depth First Search ***
  * 
  * *** Documentation: *** * 
+ * https://levelup.gitconnected.com/the-magicians-guide-to-algorithms-part-5-the-depth-first-search-2223203174bb
  * https://hackernoon.com/graphs-in-cs-and-its-traversal-algorithms-cfee5533f74e#:~:targetText=Depth%2Dfirst%20Search%20(DFS),path%2C%20and%20then%20explores%20it.
  * https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/graph/depth-first-search
  * 
  * 
  * *** Description: ***
  * Depth-first search is a common way that many people naturally use when solving problems like mazes.
- * First, we select a path in the maze (for the sake of this example, let’s choose a path according to 
- * some rule we lay out ahead of time) and we follow it until we hit a dead end or reach the end of the maze.
+ * First, we select a path in the maze and we follow it until we hit a dead end or reach the end of the maze.
  * If a given path doesn’t work, we backtrack and take an alternative path from a past junction, and try that path.
  * 
  * 
@@ -21,7 +21,7 @@
  *  -If a solution is not far from the root of the tree it would be obvious to use BFS 
  *   since it quickly searches the top of the data structure first. 
  *   However, if your solution could be deep inside the data structure, a DFS algorithm 
- *   would dive quickly down in search of it. Also, in the case of wide trees a DFS search 
+ *   would dive quickly down in search of it. Also, in the case of wide trees a DFS search
  *   is more effective while a narrow tree is easily traversed by a BFS search.
  */
 
@@ -48,6 +48,10 @@ function depthFirstSearch(tree, value) {
   return null;
 }
 
+/**
+ * left is a reference to that node's left child (example if you look at '6', the left child is '5')
+ * right is a reference to that node's right child (example if you look at '6' the right child is '7')
+ */
 let tree = [
   { value: 6, left: 1, right: 2 },
   { value: 5, left: 3, right: 4 },
@@ -71,7 +75,6 @@ let tree = [
 //    2       8   10
 //   /
 //  1
-
 
 let goalValue = 8;
 let answer = depthFirstSearch(tree, goalValue);

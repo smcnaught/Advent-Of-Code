@@ -127,6 +127,17 @@ function exploreInDirection(currentLocation, direction, grid) {
 let grid = Array.from(Array(4), () => new Array(4).fill("Open"));
 // console.log(grid);
 
+/**
+ * The grid is NOT an x, y graph it's a literal grid, like this:
+ * 
+ *      | A |   |   |   |
+ *      |   | X | X | X |
+ *      |   | X | B |   |
+ *      |   |   |   |   |
+ * 
+ * So the shortest path from A to B is: South, South, East, East, North
+ *      
+ */
 grid[0][0] = "Start";
 grid[2][2] = "Goal";
 
