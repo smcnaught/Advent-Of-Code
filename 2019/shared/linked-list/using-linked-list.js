@@ -7,8 +7,8 @@ values.forEach(value => myList.push(value));
 /**
  * PUSH Example
  */
-// myList.push('six');
-// myList.push('seven');
+myList.push('six');
+myList.push('seven');
 // myList.push('eight');
 // let resultAfterPush = myList.printList();
 // console.log(`PUSH results: ${resultAfterPush}`); // 'one -> two -> three -> six -> seven -> eight'
@@ -34,7 +34,10 @@ values.forEach(value => myList.push(value));
 
 /**
  * DELETE Example
+ * **Important - remember if you want to get the value of the deleted item, you have to use .value
  */
+// let valueOfIndex0 = myList.delete(0).value;
+// console.log(valueOfIndex0);
 // myList.delete(3);
 // let resultAfterDelete = myList.printList();
 // console.log(`DELETE results: ${resultAfterDelete}`); // 'one -> two -> three -> five'
