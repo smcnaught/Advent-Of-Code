@@ -3,12 +3,14 @@ let fs = require('fs');
 let source = './input.txt';
 // let source = './sampleInput.txt';
 
-let exampleData = `
+let exampleData = 
+`
   123 456 789
   333
   hello world
   {first, second, third}
 `
+
 // type: string
 // data: '123 456 789 \r\n333\r\nhello world\r\n{first, second, third}'
 let entireInputIsString = fs.readFileSync(source).toString('utf-8');
@@ -86,7 +88,7 @@ let types = [
   { name: 'arrayOfNumbersSeparatedBySpace', data: arrayOfNumbersSeparatedBySpace }
 ]
 types.forEach(t => {
-  console.log(t.name);
+  console.log('\x1b[36m%s\x1b[0m', t.name);
   console.log(t.data);
   console.log("=============================================")
 })
