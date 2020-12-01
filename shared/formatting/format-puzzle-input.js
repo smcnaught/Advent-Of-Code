@@ -4,6 +4,7 @@ module.exports = {
       const fs = require('fs');
       this.fs = fs;
       this.directory = directory;
+      // this.raw = fs.readFileSync(directory + '/sampleInput.txt').toString('utf-8');
       this.raw = fs.readFileSync(directory + '/input.txt').toString('utf-8');
     }
 
@@ -45,6 +46,16 @@ module.exports = {
     }
 
     /**
+     * Get array of strings split by given characters
+     * @param separator How to separate the elements.
+     * @returns An array of strings.
+     */
+    getArrayOfStringsSplitByChar(separator)
+    {
+      return this.raw.replace(/\r|\n/g, ' ').split(separator);
+    }
+
+    /**
      * Will insert null when not a number
      * @param separator How to separate the elements (i.e. ',' OR ' '  OR '' ... etc.)
      * @returns an array of numbers
@@ -52,6 +63,16 @@ module.exports = {
     getArrayOfNumbers(separator)
     {
       return this.raw.replace(/\r|\n/g, separator).split(separator).map(Number);
+    }
+
+    /**
+     * Get array of numbers by line
+     * If your input has one number on each line, can use this to create an array of numbers.
+     * @returns An array of numbers.
+     */
+    getArrayOfNumbersByLine()
+    {
+      return this.raw.replace(/\r/g, '').split('\n').map(Number);
     }
 
     /**
