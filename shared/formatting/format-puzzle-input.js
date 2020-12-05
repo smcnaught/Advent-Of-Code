@@ -12,7 +12,7 @@ module.exports = {
      * Get the raw data
      * @returns the raw data as a string (includes \r and \n)
      */
-    getRaw ()
+    getRaw()
     {
       return this.raw;
     }
