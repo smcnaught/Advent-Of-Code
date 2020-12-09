@@ -18,8 +18,6 @@ let setMap = function () {
   
       if (!map.has(bag)) map.set(bag, []);
       const info = { count: count && count !== 'no' ? count : 0, bag: bags.trim() };
-
-
       map.set(bag, [...map.get(bag), info]);
     }
   })
