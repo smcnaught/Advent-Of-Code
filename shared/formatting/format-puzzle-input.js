@@ -36,6 +36,14 @@ module.exports = {
     }
 
     /**
+     * 
+     */
+    getArrayOfNumbersByLine()
+    {
+      return this.raw.replace(/\r/g, '').split('\n').map(Number);
+    }
+
+    /**
      * Each character in the raw data becomes an element in the array.
      * Spaces are removed.
      * @returns an array of strings
@@ -73,6 +81,14 @@ module.exports = {
     getArrayOfNumbersByLine()
     {
       return this.raw.replace(/\r/g, '').split('\n').map(Number);
+    }
+
+    /**
+     * 
+     */
+    getArrayByLineBreaks()
+    {
+      return this.raw.split('\r\n\r\n').map(str => str.replace(/\r|\n/g, ""));
     }
 
     /**
