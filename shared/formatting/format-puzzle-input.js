@@ -1,11 +1,12 @@
 module.exports = {
   Formatter: class {
-    constructor(directory) {
+    constructor(directory, isSample) {
       const fs = require('fs');
       this.fs = fs;
       this.directory = directory;
-      // this.raw = fs.readFileSync(directory + '/sampleInput.txt').toString('utf-8');
-      this.raw = fs.readFileSync(directory + '/input.txt').toString('utf-8');
+
+      if (isSample) this.raw = fs.readFileSync(directory + '/sampleInput.txt').toString('utf-8');
+      else this.raw = fs.readFileSync(directory + '/input.txt').toString('utf-8');
     }
 
     /**
