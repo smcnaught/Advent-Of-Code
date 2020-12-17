@@ -9,10 +9,10 @@ for (let i = 0; i < data.length; i++) {
   turnCount++;
   info[data[i]] = { turnBefore: null, turnLastSaid: i + 1, timesSpoken: 1 };
 
-  if (i === data.length - 1) run2020Turns(data[i]);
+  if (i === data.length - 1) runTurns(data[i]);
 }
 
-function run2020Turns(lastSpoken) {
+function runTurns(lastSpoken) {
   while (turnCount < timesToRun) {
     let nextSpoken = info[lastSpoken].timesSpoken > 1 ? (turnCount - info[lastSpoken].turnBefore) : 0;
     turnCount++;
