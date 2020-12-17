@@ -2,7 +2,6 @@ const formatter = require('../../shared/formatting/format-puzzle-input');
 let data = new formatter.Formatter(__dirname).getArrayOfNumbers(',');
 let info = {}; // number: { turnBefore: null, turnLastSaid: 4, timesSpoken: 1 };
 let turnCount = 0;
-
 let timesToRun = 30000000;
 
 for (let i = 0; i < data.length; i++) {
