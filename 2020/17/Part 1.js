@@ -98,6 +98,7 @@ function runCycles(toRun, map) {
       }
     });
 
+    // Now have to check other neighbors.
     Object.entries(otherNeighbors).forEach(([key, value]) => {
       let neighborsOfCurrent;
       // check if cache has neighbors for current
