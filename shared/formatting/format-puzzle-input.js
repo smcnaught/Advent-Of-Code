@@ -37,7 +37,8 @@ module.exports = {
     }
 
     /**
-     * 
+     * Each line of raw data becomes a number in the array.
+     * @returns an array of numbers.
      */
     getArrayOfNumbersByLine()
     {
