@@ -1,6 +1,5 @@
 const formatter = require('../../shared/formatting/format-puzzle-input');
-const isSample = true;
-let data = new formatter.Formatter(__dirname, isSample).getArrayOfStringsByLine().filter(e => e !== "");
+let data = new formatter.Formatter(__dirname).getArrayOfStringsByLine().filter(e => e !== "");
 let playerOne = data.slice(1, data.indexOf("Player 2:")).map(Number);
 let playerTwo = data.slice(data.indexOf("Player 2:") + 1, data.length).map(Number);
 let multiplier = playerOne.length + playerTwo.length;

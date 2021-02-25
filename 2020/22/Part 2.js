@@ -1,6 +1,5 @@
 const formatter = require('../../shared/formatting/format-puzzle-input');
-const isSample = false;
-let data = new formatter.Formatter(__dirname, isSample).getArrayOfStringsByLine().filter(e => e !== "");
+let data = new formatter.Formatter(__dirname).getArrayOfStringsByLine().filter(e => e !== "");
 let playerOne = data.slice(1, data.indexOf("Player 2:")).map(Number);
 let playerTwo = data.slice(data.indexOf("Player 2:") + 1, data.length).map(Number);
 let multiplier = playerOne.length + playerTwo.length;
@@ -39,7 +38,6 @@ function recursiveCombat(playerOne, playerTwo, game) {
   
     const p1RemainingCards = playerOne.length;
     const p2RemainingCards = playerTwo.length;
-
 
     if (p1RemainingCards >= p1Card && p2RemainingCards >= p2Card) {
       let cloneOne = playerOne.slice(0, p1Card);
