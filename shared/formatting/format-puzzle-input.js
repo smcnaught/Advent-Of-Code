@@ -29,7 +29,7 @@ module.exports = {
 
     /**
      * Each line of raw data becomes an element in the array.
-     * @returns an array of strings 
+     * @returns an array of strings
      */
     getArrayOfStringsByLine()
     {
@@ -66,6 +66,14 @@ module.exports = {
     }
 
     /**
+     * Get array of strings split by an empty line.
+     * @returns An array of strings.
+     */
+    getArrayOfStringsSplitByBlankLine() {
+      return this.raw.split('\r\n\r\n');
+    }
+
+    /**
      * Will insert null when not a number
      * @param separator How to separate the elements (i.e. ',' OR ' '  OR '' ... etc.)
      * @returns an array of numbers
@@ -86,7 +94,7 @@ module.exports = {
     }
 
     /**
-     * 
+     * Returns an array split by line breaks.
      */
     getArrayByLineBreaks()
     {
