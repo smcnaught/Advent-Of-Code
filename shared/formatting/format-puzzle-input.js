@@ -56,6 +56,16 @@ module.exports = {
     }
 
     /**
+     * Each character in the raw data becomes an element in the array.
+     * Spaces are NOT removed.
+     * @returns an array of strings
+     */
+      getArrayOfStringsByCharWithSpaces()
+      {
+        return this.raw.replace(/\r|\n/g, '').split('');
+      }
+
+    /**
      * Get array of strings split by given characters
      * @param separator How to separate the elements.
      * @returns An array of strings.
