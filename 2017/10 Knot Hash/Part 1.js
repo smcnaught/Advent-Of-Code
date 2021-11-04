@@ -1,8 +1,6 @@
 const formatter = require('../../shared/formatting/format-puzzle-input');
 const seq = new formatter.Formatter(__dirname).getArrayOfNumbers(',');
-
 const maxLen = 256;
-const last = maxLen - 1;
 const obj = {};
 [...Array(maxLen).keys()].forEach(el => obj[el] = el);
 
@@ -23,17 +21,13 @@ for (let skipSize = 0; skipSize < seq.length; skipSize++) {
     let rev = temp.reverse();
     let len2 = curPos;
     for (let i = 0; i < rev.length; i++) {
-      if (len2 > last) len2 = 0;
+      if (len2 > maxLen - 1) len2 = 0;
       obj[len2] = rev[i];
       len2++
     }
   }
 
-  const increaseCurPosBy = numOfElements + skipSize;
-  for (let i = 0; i < increaseCurPosBy; i++) {
-    curPos++;
-    if (curPos > last) curPos = 0;
-  }
+  curPos = (curPos + numOfElements + skipSize) % maxLen;
 }
 
 console.log(`Part One Answer: ${obj[0] * obj[1]}`)
