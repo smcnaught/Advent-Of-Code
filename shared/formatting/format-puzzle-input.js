@@ -93,6 +93,31 @@ module.exports = {
       return this.raw.replace(/\r|\n/g, separator).split(separator).map(Number);
     }
 
+
+    /**
+     * Returns the ascii value for the given character.
+     * @param character The character that you'd like the ASCII value for. 
+     * @returns The ASCII value for the provided character.
+     */
+    ascii (character) { return character.charCodeAt(0); }
+
+    /**
+     * Get the ASCII values for each number in the list.
+     * @param separator How to separate the elements (i.e. ',' OR ' ' OR '' ... etc.)
+     * @param includeSeparator Boolean - Whether to include the separator ASCII values. 
+     * If comma is the separator, ASCII character '44' will be included in the array every time there is a comma.
+     * @returns An array of all the ASCII values for each number in your list.
+     */
+    getArrayOfASCIINumbers(separator, includeSeparator)
+    {
+      const asciiValues = this.raw.replace(/\s|\r|\n/g, separator).split(separator).map(this.ascii);
+      if (includeSeparator) {
+        const withSeparators = [].concat(...asciiValues.map(n => [n, this.ascii(separator)])).slice(0, -1)
+        return withSeparators;
+      }
+      else return asciiValues;
+    }
+
     /**
      * Get array of numbers by line
      * If your input has one number on each line, can use this to create an array of numbers.
