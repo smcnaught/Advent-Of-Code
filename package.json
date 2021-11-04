@@ -1,14 +1,16 @@
 {
-  "name": "advent-of-code-2019",
+  "name": "advent-of-code",
   "version": "1.0.0",
-  "description": "https://adventofcode.com/",
+  "description": "My solutions to the programming puzzles created by Eric Wastl (Advent Of Code).",
   "repository": {
     "type": "git",
     "url": "https://github.com/smcnaught/Advent-Of-Code"
   },
   "main": "",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.11.6"
+  },
   "scripts": {},
   "author": "Stephanie McNaught",
   "license": "ISC"
