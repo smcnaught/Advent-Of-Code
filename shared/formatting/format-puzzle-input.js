@@ -139,11 +139,21 @@ module.exports = {
     /**
      * Each line of raw data becomes a subarray whose elements are separated by the param you specified
      * @param separator how you would like the subarrays separated (ie ' ' OR ',' etc)
-     * @returns a 2D array of strings
+     * @returns a 2D array of strings (spaces NOT removed)
      */
     get2DArrayOfStrings(separator)
     {
       return this.raw.replace(/\r/g, '').split('\n').map(e => e.split(separator));
+    }
+
+    /**
+     * Each line of raw data becomes a subarray whose elements are separated by the param you specified
+     * @param separator how you would like the subarrays separated (ie ' ' OR ',' etc)
+     * @returns a 2D array of strings (spaces removed)
+     */
+    get2DArrayOfStringsSpacesRemoved(separator)
+    {
+      return this.raw.replace(/\r/g, '').split('\n').map(e => e.split(separator).map(s => s.trim()));
     }
 
     /**
