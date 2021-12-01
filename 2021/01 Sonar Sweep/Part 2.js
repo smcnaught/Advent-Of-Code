@@ -3,14 +3,8 @@ let report = new formatter.Formatter(__dirname).getArrayOfNumbersByLine();
 let bigger = 0;
 
 for (let i = 0; i < report.length; i++) {
-  const first = report[i];
-  const second = report[i + 1];
-  const third = report[i + 2];
-  const fourth = report[i + 3];
-
-  if (first && second && third && fourth) {
-    if ((second + third + fourth) > (first + second + third)) bigger++;
-  }
+  [a, b, c, d] = [report[i], report[i+1], report[i+2], report[i+3]]
+  if ((a && b && c && d) && (b+c+d) > (a+b+c)) bigger++;
 }
 
 console.log(`Part Two Answer: ${bigger}`);
