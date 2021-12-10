@@ -38,6 +38,7 @@ module.exports = {
 
     /**
      * Each line of raw data becomes a number in the array.
+     * @warning Leading zeroes will be removed.
      * @returns an array of numbers.
      */
     getArrayOfNumbersByLine()
