@@ -60,3 +60,35 @@
  * *** Clear your set ***
  */
 // set.clear();
+
+
+/**
+ * *** Method to count similarities between sets ***
+ */
+// function countSimilarities(set1, set2) {
+//   let matches = 0;
+//   for (const element of set1) {
+//     if (set2.has(element)) matches++;
+//   }
+//   return matches;
+// }
+
+
+/**
+ * *** Method to check if two sets equal each other ***
+ */
+// function setsAreEqual(set1, set2) {
+//   const getStrSorted = set => JSON.stringify([...set].sort());
+//   return getStrSorted(set1) === getStrSorted(set2)
+// }
+
+
+/**
+ * *** Method to check if one set contains another set ***
+ */
+// function isSuperset(set, subset) {
+//   for (let elem of subset) {
+//     if (!set.has(elem)) return false;
+//   }
+//   return true
+// }
