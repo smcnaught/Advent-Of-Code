@@ -79,6 +79,9 @@ function dijkstra(graph) {
 function lowestCostNode(costs, processed) {
   return Object.keys(costs).reduce((lowest, node) => {
     if (lowest === null || costs[node] < costs[lowest]) {
+      // note to self : changing 'processed' to an object and checking it by properties is much faster.
+      // Need to add all your keys in advance of running the dijkstra method. Set them all to false to start and then,
+      // instead of adding them to the array (see above), just flip them to false. See 2021, Day 15, part 2 for an example of this. 
       if (!processed.includes(node)) lowest = node;
     }
     return lowest;
