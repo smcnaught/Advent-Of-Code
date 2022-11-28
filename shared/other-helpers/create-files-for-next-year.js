@@ -1,11 +1,12 @@
 const fs = require('fs');
 
-const nextYear = 2023;
+const nextYear = 2022;
 const yearDir = `../../${nextYear}`;
 fs.mkdirSync(yearDir); // create year folder
 
 for (let i = 1; i < 26; i++) {
-  const dayDir = `${yearDir}/${i}`;
+  const day = i < 10 ? `0${i}` : i;
+  const dayDir = `${yearDir}/${day}`;
   fs.mkdirSync(dayDir); // create day folder
 
   const filePaths = [
