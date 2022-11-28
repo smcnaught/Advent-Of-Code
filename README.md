@@ -7,3 +7,6 @@ Advent-Of-Code is an advent calendar of programming puzzles that's released year
 ## Usage
 To test any solution with your own input, create an input.txt file in the same folder
 and paste in your puzzle input. Then run the code via node.
+
+## Create Files for New Year
+The `create-files-for-next-year.js` script can be run to create the files for a new year of puzzles. Just change the `nextYear` variable to the year you want to create and run the script with node in the terminal. 
