@@ -168,6 +168,18 @@ module.exports = {
     }
 
     /**
+     * Each line of raw data becomes a subarray whose elements are the numbers on that line separated by any non numeric character.
+     * If there are no numbers on a line, an empty subarray is added.
+     * @param toReplace [ [replaceThis, withThis], [replaceThis, withThis] ]
+     * @returns a 2D array of numbers
+     */
+     get2DArrayOfNumbersWithItemsReplaced(toReplace)
+     {
+      this.raw = this.getUpdated(toReplace);
+      return this.raw.split('\n').map(str => (str.match(/-?[0-9]+/g) || []).map(Number))
+     }
+
+    /**
      * Requires an 'input.json' file in your directory
      * @returns a JSON object
      */
@@ -189,7 +201,7 @@ module.exports = {
       toReplace.forEach(el => {
         const replaceThis = el[0];
         const withThis = el[1] || '';
-        updatedString = updatedString.replace(/\r|\n/g, ' ').replace(new RegExp(`\\b${replaceThis}\\b`, 'gi'), withThis);
+        updatedString = updatedString.replace(new RegExp(`\\b${replaceThis}\\b`, 'gi'), withThis);
       })
 
       return updatedString;
