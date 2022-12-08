@@ -47,6 +47,26 @@ module.exports = {
     }
 
     /**
+     * When given rows of data, it will give you a 2D array with the numbers in each column.
+     * @param separator how the numbers in the rows are separated ('' = no space between row items, etc.)
+     * @returns Returns an array of all numbers in a column.
+     */
+    getArrayOfNumbersByColumn(separator)
+    {
+      let columns = [];
+      let rows = this.raw.replace(/\r/g, '').split('\n').map(e => e.split(separator));
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        row.forEach((r, index) => {
+          if (!columns[index]) columns[index] = [+r];
+          else columns[index].push(+r);
+        })
+      }
+
+      return columns;
+    }
+
+    /**
      * Each character in the raw data becomes an element in the array.
      * Spaces are removed.
      * @returns an array of strings
