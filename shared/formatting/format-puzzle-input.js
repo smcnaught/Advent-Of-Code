@@ -81,10 +81,10 @@ module.exports = {
      * Spaces are NOT removed.
      * @returns an array of strings
      */
-      getArrayOfStringsByCharWithSpaces()
-      {
-        return this.raw.replace(/\r|\n/g, '').split('');
-      }
+    getArrayOfStringsByCharWithSpaces()
+    {
+      return this.raw.replace(/\r|\n/g, '').split('');
+    }
 
     /**
      * Get array of strings split by given characters
