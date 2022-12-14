@@ -6,6 +6,9 @@
  * https://hackernoon.com/breadth-first-search-in-javascript-e655cd824fa4  *** Explanation with pics *** 
  * 
  * *** Description: ***
+ * Breadth First Search algorithm is used for finding the shortest paths
+ * between nodes in an ***unweighted*** (NO cost to get from point to point) graph.
+ * 
  * Checks every possible path of length 1 and then of length 2 and so on
  * until finding the first shortest path that takes us from point A to point B
  * 
@@ -31,7 +34,7 @@
  *   would dive quickly down in search of it. Also, in the case of wide trees a DFS search
  *   is more effective while a narrow tree is easily traversed by a BFS search.
  * 
- *   Time Complexity: O(|V| + |E|)  (Big O plus the number of vertices plus the number of edges).
+ *   Time Complexity: O(V + E)  (Big O plus the number of vertices plus the number of edges).
  */
 
 /**

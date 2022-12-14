@@ -23,7 +23,7 @@
 
 function Node(value) {
   return {
-    value, // Note: we can just declare value instead of value:value since they have the same name
+    value: value,
     next: null
   }
 }
