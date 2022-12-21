@@ -6,6 +6,9 @@
  * https://hackernoon.com/breadth-first-search-in-javascript-e655cd824fa4  *** Explanation with pics *** 
  * 
  * *** Description: ***
+ * Breadth First Search algorithm is used for finding the shortest paths
+ * between nodes in an ***unweighted*** (NO cost to get from point to point) graph.
+ * 
  * Checks every possible path of length 1 and then of length 2 and so on
  * until finding the first shortest path that takes us from point A to point B
  * 
@@ -30,13 +33,15 @@
  *   However, if your solution could be deep inside the data structure, a DFS algorithm
  *   would dive quickly down in search of it. Also, in the case of wide trees a DFS search
  *   is more effective while a narrow tree is easily traversed by a BFS search.
+ * 
+ *   Time Complexity: O(V + E)  (Big O plus the number of vertices plus the number of edges).
  */
 
 /**
  * *** Methods for algorithm ***
  */
 
-// Start location will be in the following format: [distanceFromTop, distanceFromLeft]
+// startCoordinates will be in the following format: [distanceFromTop, distanceFromLeft]
 function findShortestPath(startCoordinates, grid) {
   let distanceFromTop = startCoordinates[0];
   let distanceFromLeft = startCoordinates[1];
@@ -55,7 +60,6 @@ function findShortestPath(startCoordinates, grid) {
 
   // Loop through the grid searching for the goal
   while (queue.length > 0) {
-
     // Take the first location off the queue
     let currentLocation = queue.shift();
 
@@ -69,20 +73,6 @@ function findShortestPath(startCoordinates, grid) {
 
   // No valid path found
   return false;
-}
-
-// Returns a locations status ("Valid", "Invalid", "Blocked", or "Goal")
-// returns "Valid" if it is on the grid && it is NOT an obstacle && it has not already been checked by our algorithm
-function locationStatus(location, grid) {
-  let gridSize = grid.length;
-  let distFromTop = location.distanceFromTop;
-  let distFromLeft = location.distanceFromLeft;
-  let locationNotOnGrid = distFromLeft < 0 || distFromLeft >= gridSize || distFromTop < 0 || distFromTop >= gridSize;
-
-  if (locationNotOnGrid) return 'Invalid';
-  else if (grid[distFromTop][distFromLeft] === 'Goal') return 'Goal';
-  else if (grid[distFromTop][distFromLeft] !== 'Open') return 'Blocked'; // location is either an obstacle or has been visited
-  else return 'Valid';
 }
 
 // Explores the grid from the given location in the given direction
@@ -113,6 +103,20 @@ function exploreInDirection(currentLocation, direction, grid) {
   }
 
   return newLocation;
+}
+
+// Returns a locations status ("Valid", "Invalid", "Blocked", or "Goal")
+// returns "Valid" if it is on the grid && it is NOT an obstacle && it has not already been checked by our algorithm
+function locationStatus(location, grid) {
+  let gridSize = grid.length; // note that this will need to change if grid is not same width and height.
+  let distFromTop = location.distanceFromTop;
+  let distFromLeft = location.distanceFromLeft;
+  let locationNotOnGrid = distFromLeft < 0 || distFromLeft >= gridSize || distFromTop < 0 || distFromTop >= gridSize;
+
+  if (locationNotOnGrid) return 'Invalid';
+  else if (grid[distFromTop][distFromLeft] === 'Goal') return 'Goal';
+  else if (grid[distFromTop][distFromLeft] !== 'Open') return 'Blocked'; // location is either an obstacle or has been visited
+  else return 'Valid';
 }
 
 

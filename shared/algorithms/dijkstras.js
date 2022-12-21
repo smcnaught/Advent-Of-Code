@@ -12,6 +12,8 @@
  *  4. Return the lowest cost to reach the node, and the optimal path to do so.
  * 
  *  *** See dijkstras.jpeg in same folder to see example problem we're solving ***
+ * 
+ *  Time Complexity: O ( V 2 ) O(V^2) O(V2) where V is the number of vertices in the graph
  */
 
 // Each node is represented by the keys in the graph object.
