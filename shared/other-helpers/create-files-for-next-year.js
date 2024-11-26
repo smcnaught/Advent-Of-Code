@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const nextYear = 2023;
+const nextYear = 2024;
 const yearDir = `../../${nextYear}`;
 fs.mkdirSync(yearDir); // create year folder
 
