@@ -1,5 +1,5 @@
 const formatter = require('../../shared/formatting/format-puzzle-input');
-let data = new formatter.Formatter(__dirname, true).getString();
+let data = new formatter.Formatter(__dirname).getString();
 let blocks = [];
 let id = 0;
 let checksum = 0;
